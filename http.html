@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    HTTP test
+    <a href="http://127.0.0.1:8000/hives/hives">Referens</a>
+</div>
+</body>
+<script>
+    let states = "http://127.0.0.1:8000/hives/apiaries";
+    let test = 'http://www.mocky.io/v2/5944e07213000038025b6f30';
+
+
+    fetch(states, {
+        method: 'GET',
+        headers: {
+              Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzNzI1NjQ0LCJpYXQiOjE2ODM3MTg0NDQsImp0aSI6ImIxOTE3NzBhOTQxOTRiNWJiOTNkMzVlNjFjZTMwN2ExIiwidXNlcl9pZCI6MX0.uQTw9IkKf9qyDdlVz-a_Zyo45Abj9jxPLHMpLnv4qLo",
+            "Content-Type": 'application/json'
+        },
+        //body: JSON.stringify({number: "A1x234X3452FF50", coordinates: "54.010264, 30.269050"})
+        //body: JSON.stringify({number: "A1x234X3452FF45", weight: "25", temperature: "30", humidity: "65"})
+    })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+        });
+
+</script>
+
+</html>
